@@ -27,7 +27,7 @@ else:
 currD, currM, currY = [int(x) for x in strftime("%d,%m,%Y").split(",")]
 (day, month) = (256, 0)
 months = [31, 29 if isLeap(year) else 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
-monthsNames = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "noviembre", "diciembre"]
+monthsNames = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"]
 
 m = 0
 while day > months[m]:
