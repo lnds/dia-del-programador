@@ -46,10 +46,10 @@ func main() {
 		case !progDay.Before(today) && !progDay.After(today):
 			fmt.Println("El día del programador se celebra hoy! Felicidades!")
 		case *year >= programmerDayCreation && *year < programmerDayGlobalAdoption:
-			fmt.Printf(outputFormatPastRu, *year, weekdaysRu[progDay.Weekday()], progDay.Day(), monthsRu[progDay.Month()])
+			fmt.Printf(outputFormatPastRu, *year, weekdaysRu[progDay.Weekday()], progDay.Day(), monthsRu[int(progDay.Month()) - 1])
 		default:
 			var suffix string
-			if suffix = "ó"; *year > progDay.After(today) { suffix = "ará" }
-			fmt.Printf(outputFormatEs, *year, suffix, weekdaysEs[progDay.Weekday()], progDay.Day(), monthsEs[progDay.Month()])
+			if suffix = "ó"; progDay.After(today) { suffix = "ará" }
+			fmt.Printf(outputFormatEs, *year, suffix, weekdaysEs[progDay.Weekday()], progDay.Day(), monthsEs[int(progDay.Month()) - 1])
 	}
 }
