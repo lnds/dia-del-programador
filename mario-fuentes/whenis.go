@@ -49,7 +49,7 @@ func main() {
 			fmt.Printf(outputFormatPastRu, *year, weekdaysRu[progDay.Weekday()], progDay.Day(), monthsRu[progDay.Month()])
 		default:
 			var suffix string
-			if suffix = "ó"; *year > today.Year() { suffix = "ará" }
+			if suffix = "ó"; *year > progDay.After(today) { suffix = "ará" }
 			fmt.Printf(outputFormatEs, *year, suffix, weekdaysEs[progDay.Weekday()], progDay.Day(), monthsEs[progDay.Month()])
 	}
 }
