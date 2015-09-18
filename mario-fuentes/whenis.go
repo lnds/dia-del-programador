@@ -40,7 +40,8 @@ func main() {
 	}
 	
 	progDay := time.Date(*year, time.January, 1, 0, 0, 0, 0, time.UTC).AddDate(0, 0, programmerDayOfYear - 1)
-	today := time.Date(time.Now().Year(), time.Now().Month(), time.Now().Day(), 0, 0, 0, 0, time.UTC);
+	now := time.Now()
+	today := time.Date(now.Year(), now.Month(), now.Day(), 0, 0, 0, 0, time.UTC);
 	
 	switch {
 		case !progDay.Before(today) && !progDay.After(today):
