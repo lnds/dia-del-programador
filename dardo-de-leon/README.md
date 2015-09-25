@@ -1,9 +1,10 @@
 ## El entorno de ejecución
 
 El script emplea:
-	1 La función PHP [strftime](http://php.net/manual/es/function.strftime.php) que basándose en los locale registrados en el sistema y a partir de un formato y timestamp dado retorna una cadena formateada al localismo establecido mediante [setlocale](http://php.net/manual/es/function.setlocale.php).
-	2 Instancias de DateTime que se ven influidas por el date.timezone del archivo php.ini correspondiente.
-	3 La nueva sintaxis para [declarar arrays](http://php.net/manual/es/language.types.array.php).
+
+0. La función PHP [strftime](http://php.net/manual/es/function.strftime.php) que basándose en los locale registrados en el sistema y a partir de un formato y timestamp dado retorna una cadena formateada al localismo establecido mediante [setlocale](http://php.net/manual/es/function.setlocale.php).
+1. Instancias de DateTime que se ven influidas por el date.timezone del archivo php.ini correspondiente.
+2. La nueva sintaxis para [declarar arrays](http://php.net/manual/es/language.types.array.php).
  
 Por estos motivos y para lograr un entorno de ejecución valido, opte por emplear una caja Vagrant donde poder instalar PHP 5.6 y los locale necesarios.
 
@@ -40,11 +41,11 @@ sudo apt-get install php5
 ```
 [Upgrading Ubuntu to PHP 5.6.4](https://www.digitalocean.com/community/questions/upgrading-ubuntu-to-php-5-6-4)
 La respuesta señalada por Andrew SB implica agregar al sistema un repositorio de [Ondřej Surý](https://launchpad.net/~ondrej) contribuyente del paquete php5 para Debian.
-[software-properties-common](https://packages.debian.org/es/sid/admin/software-properties-common)
-[ppa:ondrej/php5-5.6](https://launchpad.net/~ondrej/+archive/ubuntu/php5-5.6)
+- [software-properties-common](https://packages.debian.org/es/sid/admin/software-properties-common)
+- [ppa:ondrej/php5-5.6](https://launchpad.net/~ondrej/+archive/ubuntu/php5-5.6)
 
 Como se señalo en el segundo numeral, el manejo de fechas se realiza mediante [DateTime](http://php.net/manual/es/datetime.construct.php), cabe aclarar que esta clase se ve influida por el apartado date.timezone del archivo php.ini correspondiente. Este valor puede ser modificado mediante [date_default_timezone_set](http://php.net/manual/es/function.date-default-timezone-set.php) o pasado un DateTimeZone concreto como argumento al constructor de DateTime.
-El presente script no establece un timezone especifico ya que se espera que la maquina en que se ejecute disponga de un valor de date.timezone acorde en el archivo archivo php.ini correspondiente.
+El presente script no establece un timezone especifico ya que se espera que la maquina en que se ejecute disponga de un valor de date.timezone acorde en el archivo php.ini correspondiente.
 
 ```php
 // modificación general de [timezone](http://php.net/date.timezone)
